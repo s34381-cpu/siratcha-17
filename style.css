@@ -3,15 +3,18 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #fff0f5;
     color: #333;
 }
 
+/* ส่วนหัว */
 header {
-    background: #4CAF50;
+    background: linear-gradient(135deg, #ff69b4, #ffb6c1);
     color: white;
-    padding: 20px 0;
+    padding: 25px 0;
     text-align: center;
+    animation: fadeDown 1s ease;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
 }
 
 header h1 {
@@ -22,16 +25,25 @@ header p {
     margin: 5px 0 0;
 }
 
+/* กล่องเนื้อหา */
 section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
     background: white;
-    border-radius: 8px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+    animation: fadeUp 1s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
 }
 
 h2 {
-    color: #4CAF50; /* สีของหัวข้อ */
+    color: #ff69b4;
 }
 
 .project {
@@ -40,18 +52,42 @@ h2 {
 
 .project h3 {
     margin: 0 0 10px;
-    color: #333;
+    color: #ff69b4;
 }
 
 ul {
-    list-style-type: square; /* ใช้จุดสี่เหลี่ยมแทนจุดกลม */
+    list-style-type: square;
     padding-left: 20px;
 }
 
+/* ส่วนท้าย */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #333; /* สีพื้นหลังเข้ม */
+    padding: 15px 0;
+    background: #ff69b4;
     color: white;
     margin-top: 20px;
+}
+
+/* Animation */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
